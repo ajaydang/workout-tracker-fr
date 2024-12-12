@@ -1,5 +1,5 @@
 import { Card, Flex, Typography } from 'antd';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import React from 'react';
 import { loginUser } from '../services/user';
 
@@ -14,7 +14,7 @@ const Login = () => {
 		const { data } = await loginUser(payload);
 
 		if (data.data.token) {
-			localStorage.setItem('workout-token', data.data.token);
+			localStorage.setItem('workout-tracker-token', data.data.token);
 			window.location.href = 'http://localhost:3000/dashboard';
 		} else {
 			throw Error('Form Error.');

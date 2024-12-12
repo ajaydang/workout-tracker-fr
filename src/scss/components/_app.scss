@@ -1,0 +1,38 @@
+.site-layout-background {
+	background: #001529; // Dark blue background for the layout
+}
+
+.header {
+	background: #001529; // Dark blue for header
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 16px;
+}
+
+.profile-icon {
+	color: white;
+}
+
+.content-container {
+	padding: 24px;
+	background: #fff; // White background for content area
+}
+
+.card {
+	border-radius: 8px; // Rounded corners
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Subtle shadow effect
+}
+
+.exercise-card {
+	background-color: #f0f8ff; // Light cyan for Exercise Count card
+}
+
+.workout-card {
+	background-color: #f5f5f5; // Light gray for Workout Plan card
+}
+
+.schedule-card {
+	background-color: #e6f7ff; // Light blue for Scheduled Workouts card
+}

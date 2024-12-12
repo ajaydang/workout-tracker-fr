@@ -1,10 +1,13 @@
+import { BrowserRouter, Router } from 'react-router-dom';
 import './App.scss';
-import Login from './pages/Login';
+import AppRouter from './router/index';
 
 function App() {
 	return (
 		<div className='App'>
-			<Login />
+			<BrowserRouter>
+				<AppRouter />
+			</BrowserRouter>
 		</div>
 	);
 }
