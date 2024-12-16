@@ -1,18 +1,28 @@
 import React from 'react';
+import { Layout, Menu, Card, Row, Col } from 'antd';
+import {
+	UserOutlined,
+	AppstoreAddOutlined,
+	ScheduleOutlined,
+} from '@ant-design/icons';
 import { Outlet } from 'react-router-dom';
-// import Sidebar from '../components/sidebar/Sidebar';
+import Header from '../pages/layout/Header';
+import Sidebar from '../pages/layout/Sidebar';
 
+const { Content } = Layout;
 const AppWrapper = () => {
 	return (
-		<>
-			<div className=''>
-				<div className='guide-wrapper d-flex'>
-					<div className='guide-content'>
+		<Layout style={{ minHeight: '100vh' }}>
+			<Header />
+			<Layout>
+				<Sidebar />
+				<Layout>
+					<Content style={{ margin: '24px 16px 0' }}>
 						<Outlet />
-					</div>
-				</div>
-			</div>
-		</>
+					</Content>
+				</Layout>
+			</Layout>
+		</Layout>
 	);
 };
 

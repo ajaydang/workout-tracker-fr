@@ -3,8 +3,7 @@ window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\Leapfrog\\AppData\\Roaming",
   "asl.log": "Destination=file",
-  "BACKEND_API_URL": "http://localhost:5000/api/",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_5756_LFOHJCKAUBCUAMOI",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_2524_MBWMSFXBWUHZCVZK",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "COMMONPROGRAMFILES": "C:\\Program Files\\Common Files",
@@ -87,6 +86,7 @@ window.env = {
   "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
   "PUBLIC": "C:\\Users\\Public",
   "PWD": "C:/__LEAPFROG-PROJECTS/workout-tracker-fr",
+  "REACT_APP_BACKEND_API_URL": "http://localhost:5000/api",
   "SESSIONNAME": "Console",
   "SHELL": "C:\\Program Files\\Git\\usr\\bin\\bash.exe",
   "SHLVL": "2",
@@ -110,6 +110,5 @@ window.env = {
   "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-b141c646f3-sock",
   "WINDIR": "C:\\Windows",
   "ZES_ENABLE_SYSMAN": "1",
-  "_": "C:/Program Files/nodejs/node.exe",
-  "__COMPAT_LAYER": "DetectorsAppHealth"
+  "_": "C:/Program Files/nodejs/node.exe"
 };
