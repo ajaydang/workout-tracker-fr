@@ -23,7 +23,6 @@ const Exercise = () => {
 	useEffect(() => {
 		fetchExerciseData();
 	}, []);
-	console.log(exerciseData);
 
 	const columns = [
 		{

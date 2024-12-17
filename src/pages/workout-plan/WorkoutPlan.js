@@ -24,7 +24,6 @@ const WorkoutPlan = () => {
 		fetchWorkoutPlan();
 	}, []);
 
-	console.log(workoutPlanData);
 	const columns = [
 		{
 			title: 'Name',
