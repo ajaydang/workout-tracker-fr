@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { Button, Table, Space } from 'antd';
 import { DeleteOutlined, EyeOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import { getExercise } from '../../services/exercise';
+import { getWorkoutPlan } from '../../services/workoutPlan';
 
-const Exercise = () => {
-	const [exerciseData, setExerciseData] = useState([]);
+const WorkoutPlan = () => {
+	const [workoutPlanData, setWorkoutPlanData] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const fetchExerciseData = async () => {
+	const fetchWorkoutPlan = async () => {
 		try {
 			setIsLoading(true);
-			const { data } = await getExercise();
+			const { data } = await getWorkoutPlan();
 
-			setExerciseData(data);
+			setWorkoutPlanData(data);
 			setIsLoading(false);
 		} catch (error) {
 			setIsLoading(true);
@@ -21,10 +21,10 @@ const Exercise = () => {
 	};
 
 	useEffect(() => {
-		fetchExerciseData();
+		fetchWorkoutPlan();
 	}, []);
-	console.log(exerciseData);
 
+	console.log(workoutPlanData);
 	const columns = [
 		{
 			title: 'Name',
@@ -32,19 +32,9 @@ const Exercise = () => {
 			key: 'name',
 		},
 		{
-			title: 'Description',
-			dataIndex: 'description',
-			key: 'description',
-		},
-		{
-			title: 'Category',
-			dataIndex: 'category',
-			key: 'category',
-		},
-		{
-			title: 'Muscle Group',
-			dataIndex: 'muscle_group',
-			key: 'muscle_group',
+			title: 'Created At',
+			dataIndex: 'created_at',
+			key: 'created_at',
 		},
 		{
 			title: 'Actions',
@@ -65,27 +55,27 @@ const Exercise = () => {
 	];
 
 	const handleView = (key) => {
-		console.log('View exercise with key:', key);
+		console.log('View workout plan with key:', key);
 	};
 
 	const handleDelete = (key) => {
-		console.log('Delete exercise with key:', key);
+		console.log('Delete workout plan with key:', key);
 	};
 
 	return (
 		<div style={{ padding: 24, backgroundColor: '#fff' }}>
-			<h2>Exercise List</h2>
-			<Link to={'/exercise/add'}>
+			<h2>Workout Plan List</h2>
+			<Link to={'/workout-plan/add'}>
 				<Button
 					type='primary'
 					style={{ marginBottom: 16 }}
 				>
-					Create Exercise
+					Create Workout Plan
 				</Button>
 			</Link>
 			<Table
 				columns={columns}
-				dataSource={exerciseData.data}
+				dataSource={workoutPlanData.data}
 				pagination={false}
 				rowKey='key'
 				style={{ borderColor: '#000' }}
@@ -98,4 +88,4 @@ const Exercise = () => {
 	);
 };
 
-export default Exercise;
+export default WorkoutPlan;

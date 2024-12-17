@@ -13,11 +13,11 @@ import AppWrapper from './AppWrapper';
 import { JWT_LOGIN_TOKEN } from '../constant/constant';
 import Exercise from '../pages/exercise/Exercise';
 import ExerciseAdd from '../pages/exercise/ExerciseAdd';
+import WorkoutPlan from '../pages/workout-plan/WorkoutPlan';
+import WorkoutPlanAdd from '../pages/workout-plan/WorkoutPlanAdd';
 
 export default function AppRouter() {
 	const isLoggedIn = !!localStorage.getItem(JWT_LOGIN_TOKEN);
-
-	console.log(isLoggedIn);
 
 	return (
 		<Routes>
@@ -60,6 +60,15 @@ export default function AppRouter() {
 				<Route
 					path='exercise/add'
 					element={<ExerciseAdd />}
+				/>
+
+				<Route
+					path='workout-plan'
+					element={<WorkoutPlan />}
+				/>
+				<Route
+					path='workout-plan/add'
+					element={<WorkoutPlanAdd />}
 				/>
 			</Route>
 
