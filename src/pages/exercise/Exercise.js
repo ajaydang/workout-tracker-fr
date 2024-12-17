@@ -1,32 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Table, Space } from 'antd';
 import { DeleteOutlined, EyeOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import { getExercise } from '../../services/exercise';
 
 const Exercise = () => {
-	const data = [
-		{
-			key: '1',
-			name: 'Push Up',
-			description: 'A basic exercise for upper body strength.',
-			category: 'Strength',
-			muscle_group: 'Chest',
-		},
-		{
-			key: '2',
-			name: 'Squat',
-			description: 'A lower body exercise for strength and stability.',
-			category: 'Strength',
-			muscle_group: 'Legs',
-		},
-		{
-			key: '3',
-			name: 'Deadlift',
-			description: 'A compound exercise that works multiple muscle groups.',
-			category: 'Strength',
-			muscle_group: 'Back',
-		},
-	];
+	const [exerciseData, setExerciseData] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
+
+	const fetchExerciseData = async () => {
+		try {
+			setIsLoading(true);
+			const data = await getExercise();
+
+			setExerciseData(data);
+			setIsLoading(false);
+		} catch (error) {
+			setIsLoading(true);
+		}
+	};
+
+	useEffect(() => {
+		fetchExerciseData();
+	}, []);
 
 	const columns = [
 		{
@@ -88,7 +84,7 @@ const Exercise = () => {
 			</Link>
 			<Table
 				columns={columns}
-				dataSource={data}
+				dataSource={exerciseData.data.data}
 				pagination={false}
 				rowKey='key'
 				style={{ borderColor: '#000' }}
